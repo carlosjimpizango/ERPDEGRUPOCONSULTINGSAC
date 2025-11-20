@@ -1,0 +1,113 @@
+<mvc:View
+  controllerName="degrupo.app.controller.Clientes"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page id="clientesPage" title="Gestión de Clientes">
+    <content>
+      <VBox width="100%" renderType="Div">
+        <!-- Barra superior con acciones -->
+        <Toolbar>
+          <Title text="Clientes" level="H2" />
+          <ToolbarSpacer />
+          <Button text="Nuevo" type="Default" press="onNuevo" />
+          <Button text="Eliminar" type="Negative" press="onEliminar" />
+          <Button text="Cerrar sesión" type="Transparent" press="onLogout" />
+        </Toolbar>
+
+        <!-- Tabla de clientes -->
+        <Table
+          id="tablaClientes"
+          mode="SingleSelectLeft"
+          items="{clientes>/items}"
+          selectionChange="onSeleccionarCliente">
+          <columns>
+            <Column width="4rem">
+              <Text text="ID" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+              <Text text="Nombre" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+              <Text text="Tipo Doc." />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+              <Text text="Nro. Documento" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+              <Text text="Correo" />
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+              <Text text="Teléfono" />
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{clientes>cliente_id}" />
+                <Text text="{clientes>nombre}" />
+                <Text text="{clientes>tipo_documento}" />
+                <Text text="{clientes>numero_documento}" />
+                <Text text="{clientes>correo}" />
+                <Text text="{clientes>telefono}" />
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+
+        <!-- Título del formulario -->
+        <Toolbar>
+          <Title text="Formulario de cliente" level="H3" />
+        </Toolbar>
+
+        <!-- Formulario simple en VBox -->
+        <VBox class="sapUiSmallMargin">
+          <Label text="ID" />
+          <Input
+            id="inpId"
+            value="{clientes>/form/cliente_id}"
+            enabled="false" />
+
+          <Label text="Nombre *" />
+          <Input
+            id="inpNombre"
+            value="{clientes>/form/nombre}"
+            placeholder="Nombre del cliente" />
+
+          <Label text="Tipo de documento" />
+          <Input
+            id="inpTipoDoc"
+            value="{clientes>/form/tipo_documento}"
+            placeholder="DNI, RUC, CE, etc." />
+
+          <Label text="Número de documento" />
+          <Input
+            id="inpNumDoc"
+            value="{clientes>/form/numero_documento}" />
+
+          <Label text="Correo" />
+          <Input
+            id="inpCorreo"
+            type="Email"
+            value="{clientes>/form/correo}" />
+
+          <Label text="Teléfono" />
+          <Input
+            id="inpTelefono"
+            value="{clientes>/form/telefono}" />
+
+          <Label text="Dirección" />
+          <Input
+            id="inpDireccion"
+            value="{clientes>/form/direccion}" />
+        </VBox>
+
+        <!-- Botones de acción del formulario -->
+        <Toolbar>
+          <ToolbarSpacer />
+          <Button text="Cancelar" press="onCancelar" />
+          <Button text="Guardar" type="Emphasized" press="onGuardar" />
+        </Toolbar>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

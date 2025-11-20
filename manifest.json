@@ -1,0 +1,55 @@
+{
+  "sap.app": {
+    "id": "degrupo.app",
+    "type": "application",
+    "title": "ERP Grupo 4 - Frontend",
+    "description": "App SAPUI5 para login y mantenimiento de clientes",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "degrupo.app.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "degrupo.app.view",
+        "controlId": "idAppControl",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "Login",
+          "target": "Login"
+        },
+        {
+          "pattern": "clientes",
+          "name": "Clientes",
+          "target": "Clientes"
+        }
+      ],
+      "targets": {
+        "Login": {
+          "viewName": "Login"
+        },
+        "Clientes": {
+          "viewName": "Clientes"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+<mvc:View
+  controllerName="degrupo.app.controller.Login"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page id="loginPage" title="Login Seguro - ERP">
+    <content>
+      <VBox
+        width="100%"
+        alignItems="Center"
+        justifyContent="Center"
+        renderType="Div">
+        <Panel
+          headerText="Ingreso al Sistema"
+          width="400px">
+          <content>
+            <VBox width="100%" renderType="Div" class="sapUiSmallMargin">
+              <Label text="Usuario" />
+              <Input id="inpUsuario" placeholder="Usuario" />
+
+              <Label text="Contraseña" />
+              <Input
+                id="inpPassword"
+                type="Password"
+                placeholder="Contraseña" />
+
+              <!-- CAPTCHA -->
+              <Label id="lblCaptcha" text="Captcha" class="sapUiSmallMarginTop" />
+              <HBox>
+                <Text id="txtCaptchaPregunta" text="" />
+                <ToolbarSpacer />
+                <Button
+                  text="Actualizar"
+                  press="onRefrescarCaptcha"
+                  type="Transparent" />
+              </HBox>
+              <Input
+                id="inpCaptcha"
+                placeholder="Respuesta al captcha" />
+
+              <Button
+                text="Ingresar"
+                type="Emphasized"
+                press="onLoginPress"
+                class="sapUiMediumMarginTop" />
+            </VBox>
+          </content>
+        </Panel>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

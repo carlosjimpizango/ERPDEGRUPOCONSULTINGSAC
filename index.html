@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ERP Grupo 4 - SAPUI5</title>
+
+    <!-- Bootstrap de OpenUI5 -->
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sdk.openui5.org/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-libs="sap.m,sap.ui.layout"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-async="true"
+      data-sap-ui-onInit="module:sap/ui/core/ComponentSupport"
+      data-sap-ui-resourceroots='{
+        "degrupo.app": "./"
+      }'
+    ></script>
+  </head>
+  <body class="sapUiBody" id="content">
+    <!-- Aquí se montará automáticamente el componente definido en manifest.json -->
+    <div
+      data-sap-ui-component
+      data-name="degrupo.app"
+      data-id="degrupo.app"
+      data-settings='{"id":"degrupo.app"}'
+    ></div>
+  </body>
+</html>
